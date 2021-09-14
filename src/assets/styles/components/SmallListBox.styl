@@ -1,0 +1,29 @@
+.smallList__listBox
+  position absolute
+  width 73px
+  height 0px
+  border-radius 12px
+  background elegant-black
+  transform translate(-73px, 41px)
+  transition height 0.5s 
+  overflow hidden
+  z-index 10
+  ul
+    height 100%
+    margin 10px
+    overflow-y scroll
+    list-style none
+    li
+      display block
+      margin-bottom 10px
+      text-align left
+      text-decoration none
+      font-size textFontSize
+      font-weight 200
+      color letter
+
+.smallList__listBox.isOpenSmall
+  height 80px
+
+.smallList__listBox.isOpenSmall.isResponse
+  transform translateX(-100vw)

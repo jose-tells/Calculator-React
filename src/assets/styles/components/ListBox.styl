@@ -1,0 +1,30 @@
+.home__listBox
+  position absolute
+  width 225px
+  height 0px
+  margin-top 5px
+  border-radius 20px
+  background icon-blue
+  transition 0.5s
+  overflow hidden
+  z-index 10
+  ul
+    height 80%
+    margin 21px
+    overflow-y scroll
+    list-style none
+    .home__listBox--listItem
+      display block
+      text-decoration none
+      margin-bottom 10px
+      font-size textFontSize - 0.2rem
+      font-weight 200
+      color letter
+
+.home__listBox.isOpen
+  width 225px
+  height 166px
+  z-index 10
+
+.home__listBox.isGeo
+  background elegant-black

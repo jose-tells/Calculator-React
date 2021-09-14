@@ -1,0 +1,25 @@
+@import '../vars.styl'
+
+.smallList
+  display flex
+  width 75px
+
+.smallList__item
+  width 100%
+  margin-right 10px
+  justify-self center
+  text-align center
+  font-weight 200
+  font-size textFontSize
+  color letter
+
+.smallList__icon
+  margin-right 15px
+  justify-self flex-start
+  align-self center
+  font-size 2rem
+  color button-blue
+  transition 0.5s
+
+.smallList__icon.isOpenSmall
+  transform rotateZ(-90deg)

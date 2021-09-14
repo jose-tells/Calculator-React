@@ -1,0 +1,15 @@
+@import '../mixins.styl'
+
+.resultBox
+  width 70%
+  transform translateX(100vw)
+  justify-self center
+  transition 0.4s
+  .resultBox__text
+    text-align center
+    font-size textFontSize
+    font-weight 200
+    color letter
+
+.resultBox.isResultAnimated
+  transform translateX(0)

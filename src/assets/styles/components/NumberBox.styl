@@ -1,0 +1,24 @@
+@import '../mixins.styl'
+
+.numberBox
+  display flex
+  align-items center
+  justify-content center
+  width 53px
+  height: 48px
+  border-radius 10px
+  background icon-blue 
+  animation-name left-transition
+  animation-duration 0.4s
+  transition 0.4s
+  .numberBox__number
+    font-size textFontSize
+    font-weight 200
+    color white
+
+.numberBox.isIluminated
+  background letter
+  .numberBox__number
+    color elegant-black
+
+leftAnimation()

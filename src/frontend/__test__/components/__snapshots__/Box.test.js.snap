@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Box /> in default mode Box component UI snapshot 1`] = `
+<div
+  className="container"
+>
+  <h2
+    className="container__title"
+  />
+  <div
+    className="container__box"
+  >
+    <form
+      action=""
+      className="form"
+      onSubmit={[Function]}
+    >
+      <div
+        className="home__form"
+      >
+        <input
+          className="home__form--input"
+          onChange={[Function]}
+          step="0.0001"
+        />
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`<Box /> in statistics mode Box component UI snapshot 1`] = `
+<div
+  className="container"
+>
+  <h2
+    className="container__title"
+  />
+  <div
+    className="container__box"
+  >
+    <div
+      className="container__animation"
+    >
+      <form
+        action=""
+        className="form"
+        onSubmit={[Function]}
+      >
+        <div
+          className="home__form"
+        >
+          <input
+            className="home__form--input"
+            onChange={[Function]}
+            step="0.0001"
+          />
+        </div>
+      </form>
+      <form
+        action=""
+        className="form"
+        onSubmit={[Function]}
+      >
+        <div
+          className="home__form"
+        >
+          <input
+            className="home__form--input"
+            onChange={[Function]}
+            step="0.0001"
+          />
+        </div>
+      </form>
+      <div
+        className="container__animation--response"
+      >
+        <p>
+          Your
+           
+          is:
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

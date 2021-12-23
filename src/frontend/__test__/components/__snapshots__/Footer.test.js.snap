@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> Footer component UI Snapshot 1`] = `
+<p
+  className="footer"
+>
+  The total will be shown with 1 or 2 decimals depending of the values introduced
+</p>
+`;

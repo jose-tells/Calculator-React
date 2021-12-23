@@ -17,7 +17,7 @@
     "expect": true,
     "sinon": true
   },
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "plugins": [
     "react",
     "jsx-a11y",
@@ -46,6 +46,7 @@
     "guard-for-in": 0,
     "handle-callback-err": [2, "^(err|error|anySpecificError)$" ],
     "indent": [2, 2, { "SwitchCase": 1 }],
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true, "optionalDependencies": false, "peerDependencies": false}],
     "key-spacing": [2, { "beforeColon": false, "afterColon": true }],
     "linebreak-style": 0,
     "max-depth": 0,

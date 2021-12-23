@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Title /> Title component UI snapshot 1`] = `
+<header
+  className="header"
+>
+  <h1
+    className="header__title"
+  >
+    Hi!
+    <br />
+    What do you want to
+    <br />
+    calculate?
+  </h1>
+</header>
+`;

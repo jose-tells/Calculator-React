@@ -1,0 +1,49 @@
+{
+  "average": [],
+  "median": [],
+  "mode": [],
+  "geometricShapes": [
+    {
+      "id": 1,
+      "name": "Square",
+      "link": "#"
+    },
+    {
+      "id": 2,
+      "name": "Triangle",
+      "link": "#"
+    },
+    {
+      "id": 3,
+      "name": "Circle",
+      "link": "#"
+    },
+    {
+      "id": 4,
+      "name": "Rectangle",
+      "link": "#"
+    }
+  ],
+  "sections": [
+    {
+      "id": 1,
+      "name": "Average",
+      "link": "/average"
+    },
+    {
+      "id": 2,
+      "name": "Geometric Shapes",
+      "link": "/geo"
+    },
+    {
+      "id": 3,
+      "name": "Median",
+      "link": "/median"
+    },
+    {
+      "id": 4,
+      "name": "Mode",
+      "link": "/mode"
+    }
+  ]
+}

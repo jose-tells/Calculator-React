@@ -4,8 +4,6 @@
   "description": "A calculator for average, median, mode, geometric shapes and salary difference",
   "main": "index.js",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d src/server",
     "start": "node src/server",
     "build": "webpack-cli --config webpack.config.js",
     "dev": "nodemon src/server",
@@ -23,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/jose-tells/Calculator-React/issues"
   },
-  "homepage": "https://jose-tells.github.io/Calculator-React",
+  "homepage": "https://github.com/jose-tells/Calculator-React#readme",
   "dependencies": {
     "@babel/core": "^7.15.8",
     "@babel/eslint-parser": "^7.15.8",
@@ -40,7 +38,6 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
-    "gh-pages": "^3.2.3",
     "helmet": "^4.6.0",
     "history": "^5.0.1",
     "ignore-styles": "^5.0.1",

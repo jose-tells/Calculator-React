@@ -37,8 +37,8 @@ const CalcMode = ({ mode, modeChange }) => {
       </div>
       <div className={listBoxStyles}>
         <ul>
-          <li onClick={() => handleClick('Area')}>Area</li>
-          <li onClick={() => handleClick('Perímetro')}>Perimeter</li>
+          <li onClick={() => handleClick('Area')}>Área</li>
+          <li onClick={() => handleClick('Perímetro')}>Perímetro</li>
         </ul>
       </div>
     </div>

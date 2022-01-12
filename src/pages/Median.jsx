@@ -1,71 +1,55 @@
-import React, { useEffect } from 'react';
-// Components
+import React from 'react';
+// React-redux
 import { connect } from 'react-redux';
+// Components
 import Header from '../components/Header';
 import Box from '../components/Box';
 import GridNumberbox from '../components/GridNumberBox';
 import NumberBox from '../components/NumberBox';
 import ButtonCalc from '../components/ButtonCalc';
-// Custom hooks
-import useCalculate from '../hooks/useCalculate';
-// React-redux
-// Actions-redux
+import InputItems from '../components/InputItems';
+import ResponseText from '../components/ResponseText';
+// Actions
 import { saveItemMedian, cleanState } from '../actions';
 // Styles
 import '../assets/styles/components/Median.styl';
 
 const Median = (props) => {
 
-  const { history, median, saveItemMedian, cleanState } = props;
-
   const {
-    amount,
-    item,
-    count,
-    averageResult,
-    isAnimated,
-    isResponse,
-    readOnly,
-    readOnlyAmount,
-    inputMode,
-    btnFn,
-    inputElement,
-    itemsIluminated,
-    stateForEffect,
-    getAmount,
-    getItem,
-    setCount,
-    setResult,
-    positionChange,
-    responseShow,
-    changeReadOnlyState,
-    changeReadOnlyStateAmount,
-    changeInputMode,
-    changeBtnFn,
-    mapItemsIluminated,
-    stateChangeForEffect,
-    resetState,
-  // eslint-disable-next-line no-use-before-define
-  } = useCalculate(median, calculateMedian);
+    history,
+    median,
+    saveItemMedian,
+    cleanState,
+  } = props;
 
-  function calculateMedian(array) {
+  const section = 'Mediana';
+
+  const [itemsIluminated, mapItemsIluminated] = React.useState([]);
+  const [result, setResult] = React.useState(0);
+  const [isAnimation, setAnimation] = React.useState(false);
+
+  function medianFunction(array) {
+    const arrayItems = array.map((items) => {
+      return Number(items.item);
+    });
     let Median;
     // Function to sort the list from less to greater
-    const sortList = array.sort((a, b) => {
+    const sortedList = arrayItems.sort((a, b) => {
       return a - b;
     });
-    const halfList = Math.floor(sortList.length / 2);
+    const halfList = Math.floor(sortedList.length / 2);
     // Function to know if the length of the list is even or odd
     const isEven = (number) => {
       return number % 2 === 0;
     };
-    if (isEven(sortList.length)) {
-      Median = ((sortList[halfList - 1] + sortList[halfList]) / 2).toFixed(2);
+    if (isEven(sortedList.length)) {
+      Median = ((sortedList[halfList - 1] + sortedList[halfList]) / 2).toFixed(2);
       const itemIluminated = median.map((element) => {
         return {
           id: element.id,
           item: element.item,
-          isIluminated: element.item === sortList[halfList - 1] || element.item === sortList[halfList],
+          isIluminated: Number(element.item) === sortedList[halfList - 1] || Number(element.item) === sortedList[halfList],
         };
       });
       const itemIluminatedSort = itemIluminated.sort((a, b) => {
@@ -73,12 +57,12 @@ const Median = (props) => {
       });
       mapItemsIluminated(itemIluminatedSort);
     } else {
-      Median = sortList[halfList];
+      Median = sortedList[halfList];
       const itemIluminated = median.map((element) => {
         return {
           id: element.id,
           item: element.item,
-          isIluminated: element.item === Median,
+          isIluminated: (element.item) === Median,
         };
       });
       const itemIluminatedSort = itemIluminated.sort((a, b) => {
@@ -86,77 +70,56 @@ const Median = (props) => {
       });
       mapItemsIluminated(itemIluminatedSort);
     }
-
     setResult(Median);
+    setAnimation(true);
   };
 
-  useEffect(() => {
-    cleanState([]);
+  const mapMedianItems = isAnimation ? itemsIluminated : median;
+
+  React.useEffect(() => {
+    return () => {
+      cleanState([]);
+      mapItemsIluminated([]);
+      setAnimation(false);
+    };
   }, []);
-
-  const medianFunction = () => {
-    const numberOfItems = Number(amount);
-    if (inputMode === 'Amount of Items' && numberOfItems !== 0) {
-      changeReadOnlyStateAmount(!readOnlyAmount);
-      positionChange(!isAnimated);
-      changeInputMode('Items');
-    } else if (inputMode === 'Items' && count < numberOfItems) {
-      saveItemMedian(Number(item));
-      setCount(count + 1);
-      inputElement.current.value = null;
-      inputElement.current.focus({
-        preventScroll: true,
-      });
-    }
-
-    if (count + 1 < numberOfItems) {
-      stateChangeForEffect(!stateForEffect);
-    }
-
-    if (inputMode === 'Items' && count === numberOfItems - 2) {
-      changeBtnFn('Calculate');
-    }
-    if (inputMode === 'Items' && count === numberOfItems - 1) {
-      responseShow(!isResponse);
-      changeReadOnlyState(!readOnly);
-      changeBtnFn('Another?');
-    }
-  };
 
   return (
     <>
-      <Header section='Median' history={history} />
+      <Header section={section} history={history} />
       <main className='medianMain'>
-        <Box
-          averageResult={averageResult}
-          boxName={inputMode}
-          calculateFn={medianFunction}
-          getItem={getItem}
-          inputElementRef={inputElement}
-          isAnimated={isAnimated}
-          isStatistics
-          isResponse={isResponse}
-          parentCallback={getAmount}
-          readOnly={readOnly}
-          readOnlyAmount={readOnlyAmount}
-          section='Median'
-          typeInput='number'
-        />
-        <ButtonCalc
-          fx={btnFn}
-          calculateFn={medianFunction}
-          cleanState={cleanState}
-          resetState={resetState}
-        />
-        <GridNumberbox>
-          {itemsIluminated.map((element) => (
-            <NumberBox
-              key={element.id}
-              boxNumber={element.item}
-              isIluminated={element.isIluminated}
+        <Box>
+          {result ? (
+            <ResponseText
+              section={section}
+              result={result}
+              setResult={setResult}
+              cleanState={() => {
+                cleanState([]);
+                mapItemsIluminated([]);
+                setAnimation(false);
+              }}
             />
-          ))}
-        </GridNumberbox>
+          ) : (
+            <InputItems
+              saveItem={saveItemMedian}
+              inputMessage='Introduzca los números para calcular la media'
+              section={section}
+            />
+          )}
+        </Box>
+        <ButtonCalc calculateFn={() => medianFunction(median)} />
+        {median.length > 0 && (
+          <GridNumberbox>
+            {mapMedianItems.map((element) => (
+              <NumberBox
+                key={element.id}
+                boxNumber={element.item}
+                isIluminated={element.isIluminated}
+              />
+            ))}
+          </GridNumberbox>
+        )}
       </main>
     </>
   );

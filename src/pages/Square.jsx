@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
 // Components
-import Box from '../components/Box';
+// import Box from '../components/Box';
 import ButtonCalc from '../components/ButtonCalc';
 import CalcMode from '../components/CalcMode';
 import GeometricShapesResult from '../components/GeometricShapesResult';
-// ClassNames
+import InputBox from '../components/InputBox';
+import ShapesInput from '../components/ShapesInput';
 // Styles
 import '../assets/styles/components/Square.styl';
+import Box from '../components/Box';
 
 const Square = (props) => {
 
   const { section } = props;
 
-  const [side, getSide] = useState(0);
-  const [value, setValue] = useState('Area');
+  const [side, getSide] = useState('');
+  const [mode, setMode] = useState('Area');
   const [result, setResult] = useState(0);
   // Is result animated
   const [isResultAnimated, animateResult] = useState(false);
@@ -29,7 +31,7 @@ const Square = (props) => {
   }
 
   const calculate = () => {
-    if (value === 'Area') {
+    if (mode === 'Area') {
       Area();
     } else {
       Perimeter();
@@ -37,28 +39,28 @@ const Square = (props) => {
     animateResult(true);
   };
 
-  const squareSection = () => {
-    console.log('Square section');
-  };
-
   return (
     <>
       <section className='squareMain'>
-        <Box
-          boxName='Side'
-          calculateFn={squareSection}
-          parentCallback={getSide}
-          typeInput='number'
-        />
-        <GeometricShapesResult
-          section={section}
-          result={result}
-          isResultAnimated={isResultAnimated}
-        />
-        <CalcMode mode={value} modeChange={setValue} />
+        <Box>
+          <InputBox mode={mode} shape={section}>
+            <ShapesInput
+              label='Lado'
+              value={side}
+              getValue={getSide}
+            />
+          </InputBox>
+        </Box>
+        {!!result && (
+          <GeometricShapesResult
+            mode={mode}
+            section={section}
+            result={result}
+            isResultAnimated={isResultAnimated}
+          />
+        )}
+        <CalcMode mode={mode} modeChange={setMode} />
         <ButtonCalc
-          fx='Calculate'
-          side={side}
           calculateFn={calculate}
         />
       </section>

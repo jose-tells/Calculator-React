@@ -5,44 +5,40 @@
   "geometricShapes": [
     {
       "id": 1,
-      "name": "Square",
-      "link": "#"
+      "name": "Cuadrado"
     },
     {
       "id": 2,
-      "name": "Triangle",
-      "link": "#"
+      "name": "Triángulo"
     },
     {
       "id": 3,
-      "name": "Circle",
-      "link": "#"
+      "name": "Círculo"
     },
     {
       "id": 4,
-      "name": "Rectangle",
-      "link": "#"
+      "name": "Rectángulo"
     }
   ],
   "sections": [
     {
       "id": 1,
-      "name": "Average",
+      "name": "Promedio",
       "link": "/average"
     },
     {
       "id": 2,
-      "name": "Geometric Shapes",
+      "name": "Fórmulas geométricas",
       "link": "/geo"
     },
     {
       "id": 3,
-      "name": "Median",
+      "name": "Mediana",
       "link": "/median"
     },
     {
       "id": 4,
-      "name": "Mode",
+      "name": "Moda",
       "link": "/mode"
     }
   ]

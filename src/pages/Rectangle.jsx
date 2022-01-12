@@ -4,6 +4,8 @@ import Box from '../components/Box';
 import ButtonCalc from '../components/ButtonCalc';
 import CalcMode from '../components/CalcMode';
 import GeometricShapesResult from '../components/GeometricShapesResult';
+import ShapesInput from '../components/ShapesInput';
+import InputBox from '../components/InputBox';
 // Styles
 import '../assets/styles/components/Rectangle.styl';
 
@@ -11,9 +13,9 @@ const Rectangle = (props) => {
 
   const { section } = props;
 
-  const [width, getWidth] = useState(0);
-  const [length, getLength] = useState(0);
-  const [value, setValue] = useState('Area');
+  const [width, getWidth] = useState('');
+  const [length, getLength] = useState('');
+  const [mode, setMode] = useState('Area');
   const [result, setResult] = useState(0);
   // Is result animated
   const [isResultAnimated, animateResult] = useState(false);
@@ -29,7 +31,7 @@ const Rectangle = (props) => {
   };
 
   const calculate = () => {
-    if (value === 'Area') {
+    if (mode === 'Area') {
       Area();
     } else {
       Perimeter();
@@ -37,32 +39,32 @@ const Rectangle = (props) => {
     animateResult(true);
   };
 
-  const rectangleSection = () => {
-    console.log('Rectangle section');
-  };
-
   return (
     <>
       <main className='rectangleMain'>
-        <Box
-          boxName='Width'
-          calculateFn={rectangleSection}
-          parentCallback={getWidth}
-          typeInput='number'
-        />
-        <Box
-          boxName='Length'
-          calculateFn={rectangleSection}
-          parentCallback={getLength}
-          typeInput='number'
-        />
-        <GeometricShapesResult
-          section={section}
-          result={result}
-          isResultAnimated={isResultAnimated}
-        />
-        <CalcMode mode={value} modeChange={setValue} />
-        <ButtonCalc fx='Calculate' calculateFn={calculate} />
+        <Box>
+          <InputBox mode={mode} shape={section}>
+            <ShapesInput
+              label='Largo'
+              value={width}
+              getValue={getWidth}
+            />
+            <ShapesInput
+              label='Ancho'
+              value={length}
+              getValue={getLength}
+            />
+          </InputBox>
+        </Box>
+        {!!result && (
+          <GeometricShapesResult
+            mode={mode}
+            result={result}
+            isResultAnimated={isResultAnimated}
+          />
+        )}
+        <CalcMode mode={mode} modeChange={setMode} />
+        <ButtonCalc calculateFn={calculate} />
       </main>
     </>
   );

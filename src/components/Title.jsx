@@ -4,11 +4,11 @@ const Title = () => {
   return (
     <header className='header'>
       <h1 className='header__title'>
-        Hi!
+        Hola!
         <br />
-        What do you want to
+        ¿Que quieres
         <br />
-        calculate?
+        calcular?
       </h1>
     </header>
   );

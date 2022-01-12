@@ -2,7 +2,9 @@ import React from 'react';
 
 const GridNumberBox = ({ children }) => {
   return (
-    <section className='grid'>{ children }</section>
+    <section className='grid'>
+      {children}
+    </section>
   );
 };
 

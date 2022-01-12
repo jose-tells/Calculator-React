@@ -1,17 +1,15 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
-import { Link } from 'react-router-dom';
 // Font awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
-const Header = (props) => {
-  const { section } = props;
-
+const Header = ({ section, history }) => {
   return (
     <header className='section'>
-      <Link to='/'>
+      <div onClick={() => history.goBack()}>
         <FontAwesomeIcon className='section__icon' icon={faChevronLeft} />
-      </Link>
+      </div>
       <h1 className='section__title'>{section}</h1>
     </header>
   );

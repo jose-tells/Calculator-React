@@ -6,13 +6,15 @@ import ButtonCalc from '../components/ButtonCalc';
 import GeometricShapesResult from '../components/GeometricShapesResult';
 // Styles
 import '../assets/styles/components/Circle.styl';
+import ShapesInput from '../components/ShapesInput';
+import InputBox from '../components/InputBox';
 
 const Circle = (props) => {
 
   const { section } = props;
 
-  const [radius, getRadius] = useState(0);
-  const [value, setValue] = useState('Area');
+  const [radius, getRadius] = useState('');
+  const [mode, setMode] = useState('Area');
   const [result, setResult] = useState(0);
   // Is result animated
   const [isResultAnimated, animateResult] = useState(false);
@@ -28,7 +30,7 @@ const Circle = (props) => {
   }
 
   const calculate = () => {
-    if (value === 'Area') {
+    if (mode === 'Area') {
       Area();
     } else {
       Perimeter();
@@ -36,26 +38,27 @@ const Circle = (props) => {
     animateResult(true);
   };
 
-  const circleSection = () => {
-    console.log('Circle section');
-  };
-
   return (
     <>
       <section className='circleMain'>
-        <Box
-          boxName='Radio'
-          calculateFn={circleSection}
-          parentCallback={getRadius}
-          typeInput='number'
-        />
-        <GeometricShapesResult
-          section={section}
-          result={result}
-          isResultAnimated={isResultAnimated}
-        />
-        <CalcMode mode={value} modeChange={setValue} />
-        <ButtonCalc fx='Calculate' calculateFn={calculate} />
+        <Box>
+          <InputBox mode={mode} shape={section}>
+            <ShapesInput
+              label='Radio'
+              value={radius}
+              getValue={getRadius}
+            />
+          </InputBox>
+        </Box>
+        {!!result && (
+          <GeometricShapesResult
+            mode={mode}
+            result={result}
+            isResultAnimated={isResultAnimated}
+          />
+        )}
+        <CalcMode mode={mode} modeChange={setMode} />
+        <ButtonCalc calculateFn={calculate} />
       </section>
     </>
   );

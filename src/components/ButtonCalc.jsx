@@ -1,20 +1,18 @@
 import React from 'react';
 
-const ButtonCalc = (props) => {
-  const { fx, calculateFn, cleanState, resetState } = props;
+const ButtonCalc = ({ calculateFn }) => {
 
-  const handleClick = () => {
-    if (fx === 'Another?') {
-      resetState();
-      cleanState([]);
-    } else {
-      calculateFn();
-    }
+  const handleCalculate = () => {
+    calculateFn();
   };
 
   return (
-    <button type='button' onClick={handleClick} className='btn'>
-      {fx}
+    <button
+      type='button'
+      onClick={handleCalculate}
+      className='btn'
+    >
+      Calcular
     </button>
   );
 };

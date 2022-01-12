@@ -2,7 +2,7 @@
 
 .calcMode__container
   width 100%
-  height 90px
+  position relative
   display flex
   flex-direction column
   align-items center
@@ -12,7 +12,7 @@
   display flex
   width 130px
   height 33px
-  background letter
+  background elegant-black
   border-radius 12px
 
 .calcModeForm__input
@@ -21,6 +21,7 @@
   padding 4px 11px
   border 0
   outline 0
+  color letter
   font-family main-font
   font-size textFontSize - 0.2rem
   font-weight 400
@@ -37,22 +38,22 @@
 .calcModeForm__listBox
   display absolute
   width 130px
-  height 0px
+  height 0
   margin-top 2px
   border-radius 12px
-  background letter
+  background elegant-black
   transition 0.5s
   overflow hidden
   ul
-    height 70%
+    height auto
     margin 4px 11px
     list-style none
     li
       display block
       font-size textFontSize - 0.2rem
       font-weight 400
-      color elegant-black
+      color letter
 
 .calcModeForm__listBox.calcIsOpen
-  height 55px
-  z-index 100
+  height 50px
+  z-index 10

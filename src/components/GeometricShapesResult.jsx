@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 
 const GeometricShapesResult = (props) => {
-  const { section, result, isResultAnimated } = props;
+  const { mode, result, isResultAnimated, section } = props;
 
   const resultBoxStyles = classNames('resultBox', {
     isResultAnimated,
@@ -11,10 +11,16 @@ const GeometricShapesResult = (props) => {
   return (
     <div className={resultBoxStyles}>
       <p className='resultBox__text'>
-        The
+        El
+        {' '}
+        {mode}
+        {' '}
+        del
+        {' '}
         {section}
         {' '}
-        Area is
+        es
+        {' '}
         {result}
       </p>
     </div>

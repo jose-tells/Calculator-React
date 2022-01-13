@@ -5,7 +5,7 @@ const ESLintPLugin = require('eslint-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
-  mode: 'production',
+  mode: 'development',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'assets/bundle.js',
@@ -63,4 +63,10 @@ module.exports = {
       filename: 'index.html',
     }),
   ],
+  devServer: {
+    historyApiFallback: true,
+    port: 3001,
+    static: path.join(__dirname, 'dist'),
+    compress: true,
+  },
 };

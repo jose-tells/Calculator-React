@@ -4,7 +4,7 @@
   "description": "A calculator for average, median, mode, geometric shapes and salary difference",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve --config webpack.config.js",
+    "start": "webpack serve --config webpack.config.dev.js",
     "build": "webpack-cli --config webpack.config.js",
     "test": "jest",
     "test:watch": "jest --watch",

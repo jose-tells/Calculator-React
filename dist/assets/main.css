@@ -1,0 +1,763 @@
+/*!*******************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/stylus-loader/dist/cjs.js!./src/assets/styles/HomeImports.styl ***!
+  \*******************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap);
+/*!************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/stylus-loader/dist/cjs.js!./src/assets/styles/GeoShapesImports.styl ***!
+  \************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap);
+/*!**********************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/stylus-loader/dist/cjs.js!./src/assets/styles/AverageImports.styl ***!
+  \**********************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap);
+/*!***********************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/stylus-loader/dist/cjs.js!./src/assets/styles/HomeImports.styl (1) ***!
+  \***********************************************************************************************************************************/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: 'Manrope', sans-serif;
+  background: #201f3d;
+}
+body {
+  overflow-x: hidden;
+}
+.home {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.header .header__title {
+  text-align: center;
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #fff;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.home__form {
+  width: 225px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 42px;
+  background: #2a2933;
+  transition: 0.5s;
+}
+.home__form .home__form--icon {
+  font-size: 2rem;
+}
+.home__form.isHome {
+  background: #42417f;
+}
+.home__form.isAnimated {
+  transform: translateX(-100%);
+}
+.home__form.isResponse {
+  transform: translateX(-200%);
+}
+.home__form--input {
+  width: 75%;
+  padding-left: 19px;
+  background: transparent;
+  border: 0;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 200;
+  color: #f0d654;
+  outline: none;
+}
+.home__form--input::placeholder {
+  color: #f0d654;
+  opacity: 0.5;
+}
+.home__form--icon {
+  margin-left: 25px;
+  justify-self: flex-end;
+  align-self: center;
+  color: #7675e5;
+  transition: 0.5s;
+}
+.home__form--icon.isOpen {
+  transform: rotateZ(-90deg);
+}
+.home__listBox {
+  position: absolute;
+  width: 225px;
+  height: 0px;
+  margin-top: 5px;
+  border-radius: 20px;
+  background: #42417f;
+  transition: 0.5s;
+  overflow: hidden;
+  z-index: 10;
+}
+.home__listBox ul {
+  height: 80%;
+  margin: 21px;
+  overflow-y: auto;
+  list-style: none;
+}
+.home__listBox ul .home__listBox--listItem {
+  display: block;
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-size: 1.6rem;
+  font-weight: 200;
+  color: #f0d654;
+}
+.home__listBox.isOpen {
+  width: 225px;
+  height: 166px;
+  z-index: 10;
+}
+.home__listBox.isGeo {
+  background: #2a2933;
+}
+
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/stylus-loader/dist/cjs.js!./src/assets/styles/components/Square.styl ***!
+  \*************************************************************************************************************************************/
+.calcMode__container {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto 0 auto;
+}
+.calcModeForm {
+  display: flex;
+  width: 130px;
+  height: 33px;
+  background: #f0d654;
+  border-radius: 12px;
+}
+.calcModeForm__input {
+  width: 83%;
+  background: transparent;
+  padding: 4px 11px;
+  border: 0;
+  outline: 0;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.calcModeForm__input--icon {
+  align-self: center;
+  font-size: 2rem;
+  color: #7675e5;
+  transition: 0.5s;
+}
+.calcModeForm__input--icon.calcIsOpen {
+  transform: rotateZ(-90deg);
+}
+.calcModeForm__listBox {
+  display: absolute;
+  width: 130px;
+  height: 0px;
+  margin-top: 2px;
+  border-radius: 12px;
+  background: #f0d654;
+  transition: 0.5s;
+  overflow: hidden;
+}
+.calcModeForm__listBox ul {
+  height: 70%;
+  margin: 4px 11px;
+  list-style: none;
+}
+.calcModeForm__listBox ul li {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #2a2933;
+}
+.calcModeForm__listBox.calcIsOpen {
+  height: 55px;
+  z-index: 100;
+}
+.squareMain {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  animation-name: left-transition;
+  animation-duration: 0.4s;
+}
+@-moz-keyframes left-transition {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes left-transition {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@-o-keyframes left-transition {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes left-transition {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/*!***************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/stylus-loader/dist/cjs.js!./src/assets/styles/components/Triangle.styl ***!
+  \***************************************************************************************************************************************/
+.calcMode__container {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto 0 auto;
+}
+.calcModeForm {
+  display: flex;
+  width: 130px;
+  height: 33px;
+  background: #f0d654;
+  border-radius: 12px;
+}
+.calcModeForm__input {
+  width: 83%;
+  background: transparent;
+  padding: 4px 11px;
+  border: 0;
+  outline: 0;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.calcModeForm__input--icon {
+  align-self: center;
+  font-size: 2rem;
+  color: #7675e5;
+  transition: 0.5s;
+}
+.calcModeForm__input--icon.calcIsOpen {
+  transform: rotateZ(-90deg);
+}
+.calcModeForm__listBox {
+  display: absolute;
+  width: 130px;
+  height: 0px;
+  margin-top: 2px;
+  border-radius: 12px;
+  background: #f0d654;
+  transition: 0.5s;
+  overflow: hidden;
+}
+.calcModeForm__listBox ul {
+  height: 70%;
+  margin: 4px 11px;
+  list-style: none;
+}
+.calcModeForm__listBox ul li {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #2a2933;
+}
+.calcModeForm__listBox.calcIsOpen {
+  height: 55px;
+  z-index: 100;
+}
+.triangleMain {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  animation-name: left-transition;
+  animation-duration: 0.4s;
+}
+@-moz-keyframes left-transition {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes left-transition {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@-o-keyframes left-transition {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes left-transition {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/stylus-loader/dist/cjs.js!./src/assets/styles/components/Circle.styl ***!
+  \*************************************************************************************************************************************/
+.circleMain {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  animation-name: left-transition;
+  animation-duration: 0.4s;
+}
+@-moz-keyframes left-transition {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes left-transition {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@-o-keyframes left-transition {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes left-transition {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/*!****************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/stylus-loader/dist/cjs.js!./src/assets/styles/components/Rectangle.styl ***!
+  \****************************************************************************************************************************************/
+.rectangleMain {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  animation-name: left-transition;
+  animation-duration: 0.4s;
+}
+@-moz-keyframes left-transition {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes left-transition {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@-o-keyframes left-transition {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes left-transition {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/*!****************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/stylus-loader/dist/cjs.js!./src/assets/styles/GeoShapesImports.styl (1) ***!
+  \****************************************************************************************************************************************/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: 'Manrope', sans-serif;
+  background: #201f3d;
+}
+body {
+  overflow-x: hidden;
+}
+.geometricMain {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: hidden;
+}
+.section {
+  display: flex;
+  align-items: center;
+  width: 65%;
+  margin: 38px 0 22px 13px;
+}
+.section .section__icon {
+  font-size: 2rem;
+  margin-right: 15px;
+  justify-self: flex-end;
+  align-self: center;
+  color: #7675e5;
+}
+.section .section__title {
+  align-self: center;
+  font-weight: 600;
+  color: #fff;
+}
+.container {
+  width: 300px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+.container .container__title {
+  align-self: flex-start;
+  transform: translate(15px, 0);
+  font-weight: 400;
+  font-size: 2rem;
+  color: #f0d654;
+}
+.container .container__box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 133px;
+  margin: auto;
+  border-radius: 25px;
+  background: #42417f;
+}
+.container.isLeft {
+  animation-name: left-transition;
+  animation-duration: 0.4s;
+}
+.container__animation {
+  display: flex;
+  max-width: 225px;
+  overflow: hidden;
+}
+.container__animation--response {
+  display: flex;
+  align-items: center;
+  width: 225px;
+  height: 40px;
+  align-self: center;
+  justify-self: center;
+  min-width: 225px;
+  background: #2a2933;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+.container__animation--response p {
+  padding-left: 14px;
+  color: #f0d654;
+  font-size: 1.8rem;
+  font-weight: 200;
+}
+.container__animation--response.isResponse {
+  transform: translateX(-200%);
+}
+@-moz-keyframes left-transition {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes left-transition {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@-o-keyframes left-transition {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes left-transition {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.smallList {
+  display: flex;
+  width: 75px;
+}
+.smallList__item {
+  width: 100%;
+  margin-right: 10px;
+  justify-self: center;
+  text-align: center;
+  font-weight: 200;
+  font-size: 1.8rem;
+  color: #f0d654;
+}
+.smallList__icon {
+  margin-right: 15px;
+  justify-self: flex-start;
+  align-self: center;
+  font-size: 2rem;
+  color: #7675e5;
+  transition: 0.5s;
+}
+.smallList__icon.isOpenSmall {
+  transform: rotateZ(-90deg);
+}
+.smallList__listBox {
+  position: absolute;
+  width: 73px;
+  height: 0px;
+  border-radius: 12px;
+  background: #2a2933;
+  transform: translate(-73px, 41px);
+  transition: height 0.5s;
+  overflow: hidden;
+  z-index: 10;
+}
+.smallList__listBox ul {
+  height: 100%;
+  margin: 10px;
+  overflow-y: scroll;
+  list-style: none;
+}
+.smallList__listBox ul li {
+  display: block;
+  margin-bottom: 10px;
+  text-align: left;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 200;
+  color: #f0d654;
+}
+.smallList__listBox.isOpenSmall {
+  height: 80px;
+}
+.smallList__listBox.isOpenSmall.isResponse {
+  transform: translateX(-100vw);
+}
+.resultBox {
+  width: 70%;
+  transform: translateX(100vw);
+  justify-self: center;
+  transition: 0.4s;
+}
+.resultBox .resultBox__text {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 200;
+  color: #f0d654;
+}
+.resultBox.isResultAnimated {
+  transform: translateX(0);
+}
+.btn {
+  text-align: center;
+  margin: 10px;
+  width: 100px;
+  height: 33px;
+  padding: 4px 11px;
+  background: #f0d654;
+  border: 0;
+  border-radius: 12px;
+  outline: 0;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  z-index: 0;
+}
+.footer {
+  width: 75%;
+  text-align: left;
+  margin: 12px 0 32px 32px;
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: #f0d654;
+}
+
+/*!**************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/stylus-loader/dist/cjs.js!./src/assets/styles/AverageImports.styl (1) ***!
+  \**************************************************************************************************************************************/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: 'Manrope', sans-serif;
+  background: #201f3d;
+}
+body {
+  overflow-x: hidden;
+}
+.averageMain {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.grid {
+  width: 80%;
+  margin: 20px auto;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 20px;
+  overflow-x: hidden;
+}
+.numberBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 53px;
+  height: 48px;
+  border-radius: 10px;
+  background: #42417f;
+  animation-name: left-transition;
+  animation-duration: 0.4s;
+  transition: 0.4s;
+}
+.numberBox .numberBox__number {
+  font-size: 1.8rem;
+  font-weight: 200;
+  color: #fff;
+}
+.numberBox.isIluminated {
+  background: #f0d654;
+}
+.numberBox.isIluminated .numberBox__number {
+  color: #2a2933;
+}
+@-moz-keyframes left-transition {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes left-transition {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@-o-keyframes left-transition {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes left-transition {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/stylus-loader/dist/cjs.js!./src/assets/styles/components/Median.styl ***!
+  \*************************************************************************************************************************************/
+.medianMain {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/*!***********************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/stylus-loader/dist/cjs.js!./src/assets/styles/components/Mode.styl ***!
+  \***********************************************************************************************************************************/
+.modeMain {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+

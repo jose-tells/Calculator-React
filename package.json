@@ -39,7 +39,7 @@
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "redux": "^4.1.1",
-    "stylus": "^0.55.0",
+    "stylus": "^0.56.0",
     "webpack": "^5.52.1",
     "webpack-cli": "^4.8.0"
   },

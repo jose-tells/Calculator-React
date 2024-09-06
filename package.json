@@ -22,9 +22,9 @@
   },
   "homepage": "https://github.com/jose-tells/Calculator-React#readme",
   "dependencies": {
-    "@babel/core": "^7.15.8",
+    "@babel/core": "^7.23.2",
     "@babel/eslint-parser": "^7.15.8",
-    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-env": "^7.23.3",
     "@babel/preset-react": "^7.14.5",
     "@babel/register": "^7.15.3",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -39,8 +39,8 @@
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "redux": "^4.1.1",
-    "stylus": "^0.55.0",
-    "webpack": "^5.52.1",
+    "stylus": "^0.59.0",
+    "webpack": "^5.79.0",
     "webpack-cli": "^4.8.0"
   },
   "devDependencies": {
